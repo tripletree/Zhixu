@@ -14,7 +14,7 @@ onMounted(() => {
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const links = [
-  { label: '产品能力', href: '#framework' },
+  { label: '解决方案', href: '#framework' },
   { label: '功能矩阵', href: '#features' },
   { label: '业务场景', href: '#scenarios' },
 ]

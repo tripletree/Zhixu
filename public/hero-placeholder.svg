@@ -1,0 +1,60 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a0c10"/>
+      <stop offset="0.45" stop-color="#13171f"/>
+      <stop offset="1" stop-color="#1b1c1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.30" r="0.7">
+      <stop offset="0" stop-color="#c9ad7c" stop-opacity="0.34"/>
+      <stop offset="0.4" stop-color="#9a7f52" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0a0c10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="drape" x1="300" y1="200" x2="1000" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eceae1" stop-opacity="0.10"/>
+      <stop offset="0.5" stop-color="#c9ad7c" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#57b8d4" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="figure" x1="600" y1="300" x2="600" y2="1400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a2d34"/>
+      <stop offset="1" stop-color="#0e1117"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <rect width="1200" height="1500" fill="url(#glow)"/>
+
+  <!-- abstract draped fabric -->
+  <g filter="url(#soft)" opacity="0.9">
+    <path d="M280 -40 C 520 360, 360 720, 620 980 C 820 1180, 700 1420, 980 1560 L 1280 1560 L 1280 -40 Z" fill="url(#drape)"/>
+  </g>
+
+  <!-- faint runway figure silhouette -->
+  <g opacity="0.55">
+    <ellipse cx="660" cy="430" rx="78" ry="92" fill="url(#figure)"/>
+    <path d="M560 560 C 600 520, 720 520, 760 560 L 800 1040 C 760 1120, 740 1300, 720 1440 L 600 1440 C 588 1280, 560 1120, 520 1040 Z" fill="url(#figure)"/>
+    <path d="M566 600 L 470 980 L 520 1000 L 600 700 Z" fill="url(#figure)"/>
+    <path d="M754 600 L 868 940 L 818 968 L 720 700 Z" fill="url(#figure)"/>
+  </g>
+
+  <!-- coordinate / analysis lines -->
+  <g stroke="#57b8d4" stroke-opacity="0.18" stroke-width="1">
+    <path d="M0 480 H1200"/>
+    <path d="M0 920 H1200"/>
+    <path d="M760 0 V1500"/>
+  </g>
+  <g fill="#57b8d4" fill-opacity="0.5">
+    <circle cx="760" cy="480" r="3.5"/>
+    <circle cx="760" cy="920" r="3.5"/>
+  </g>
+
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.05"/>
+
+  <!-- placeholder note -->
+  <g opacity="0.5">
+    <rect x="44" y="1416" width="300" height="40" rx="20" fill="#07080a" fill-opacity="0.6" stroke="#eceae1" stroke-opacity="0.18"/>
+    <text x="68" y="1441" font-family="Inter, sans-serif" font-size="15" letter-spacing="2" fill="#c8c7c0">占位图 · REPLACE WITH RUNWAY IMAGE</text>
+  </g>
+</svg>

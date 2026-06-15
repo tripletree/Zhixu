@@ -1,0 +1,157 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/*  知序 FabricMind — Design tokens                                    */
+/*  高级时尚 (Fashion) + 智能科技 (Intelligence)                        */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Base 01 · 曜石黑 / 墨黑 (obsidian ink) */
+  --color-ink-950: #07080a;
+  --color-ink-900: #0a0c10;
+  --color-ink-850: #0e1117;
+  --color-ink-800: #13171f;
+  --color-ink-750: #181d27;
+  --color-ink-700: #1f2531;
+
+  /* Base 02 · 冷白 / 米白偏冷 (cool bone) */
+  --color-bone: #eceae1;
+  --color-bone-soft: #c8c7c0;
+  --color-bone-dim: #9a9a95;
+
+  /* Base 03 · 雾灰 / 金属灰 (metallic mist) */
+  --color-mist: #8b8f99;
+  --color-mist-dark: #565b66;
+
+  /* Accent 01 · 电光蓝 / 冷青蓝 (electric azure) */
+  --color-azure: #57b8d4;
+  --color-azure-bright: #6fd0ec;
+  --color-azure-deep: #2c7e98;
+
+  /* Accent 02 · 香槟金 / 胭脂红 (champagne / rouge — sparingly) */
+  --color-champagne: #c9ad7c;
+  --color-rouge: #9a4250;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-zh: 'Noto Sans SC', 'Inter', ui-sans-serif, sans-serif;
+
+  /* Motion easing */
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ink-950);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-azure) 35%, transparent);
+    color: var(--color-bone);
+  }
+
+  /* Thin, calm scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-700);
+    border-radius: 999px;
+    border: 3px solid var(--color-ink-950);
+  }
+}
+
+@layer utilities {
+  /* Fine technical grid / coordinate overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(139, 143, 153, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 143, 153, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(139, 143, 153, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 143, 153, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Low-contrast film grain / noise */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* Frosted / fog glass panel */
+  .glass {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(236, 234, 225, 0.08);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Reduced-motion shimmer guard handled per-component */
+  @keyframes shimmer-sweep {
+    0% {
+      transform: translateY(-120%);
+    }
+    100% {
+      transform: translateY(220%);
+    }
+  }
+  .animate-shimmer {
+    animation: shimmer-sweep 3.4s var(--ease-calm) infinite;
+  }
+
+  @keyframes caret-blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+  .animate-caret {
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer,
+    .animate-caret {
+      animation: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

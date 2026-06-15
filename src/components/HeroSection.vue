@@ -145,17 +145,7 @@ const fadeIn = (delay: number) => ({
           </div>
         </Motion>
 
-        <Motion v-bind="fadeIn(0.9)">
-          <div class="mt-14 flex items-center gap-6 text-[12px] tracking-wide text-mist">
-            <span>品牌监测</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>秀场趋势</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>商品分析</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>智能报告</span>
-          </div>
-        </Motion>
+
       </div>
     </div>
 

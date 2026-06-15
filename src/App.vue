@@ -13,8 +13,8 @@ import CtaFooter from './components/CtaFooter.vue'
     <main>
       <HeroSection />
       <SystemFramework />
-      <FeatureMatrix />
       <BusinessScenarios />
+      <FeatureMatrix />
       <CtaFooter />
     </main>
   </div>

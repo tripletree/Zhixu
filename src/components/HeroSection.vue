@@ -104,7 +104,7 @@ const fadeIn = (delay: number) => ({
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />
-            <span class="eyebrow text-bone-soft" style="font-size: 12px;"> 让时尚判断成为可验证的 AI 决策</span>
+            <span class="eyebrow text-bone-soft" style="font-size: 12px;"> 让时尚判断成为可验证的数据决策</span>
           </div>
         </Motion>
 

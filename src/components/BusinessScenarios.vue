@@ -4,26 +4,27 @@ import { Motion } from '../lib/motion'
 import Reveal from './ui/Reveal.vue'
 
 const reduced = useReducedMotion()
+const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const scenarios = [
   {
-    img: '/scenarios/trend-research.svg',
+    img: 'scenarios/trend-research.svg',
     title: '趋势研究与方向规划',
     desc: '识别全球趋势与文化信号，预测风向，明确产品开发方向。',
   },
   {
-    img: '/scenarios/product-planning.svg',
+    img: 'scenarios/product-planning.svg',
     title: '产品企划与系列开发',
     desc: 'AI 辅助企划与款式组合，智能推荐材料与色彩，提升开发效率。',
   },
   {
-    img: '/scenarios/material-innovation.svg',
+    img: 'scenarios/material-innovation.svg',
     title: '材料创新与应用',
     desc: '基于性能、成本与可持续性评估，识别更优材料解决方案。',
   },
   {
-    img: '/scenarios/client-proposal.svg',
+    img: 'scenarios/client-proposal.svg',
     title: '客户提案与沟通',
     desc: '生成专业提案与可视化内容，提升沟通效率与客户信任。',
   },
@@ -75,7 +76,7 @@ const cardMotion = (i: number) => ({
               <div class="flex h-full flex-col">
                 <div class="relative overflow-hidden rounded-2xl border border-bone/[0.07]">
                   <img
-                    :src="s.img"
+                    :src="baseUrl + s.img"
                     :alt="s.title"
                     class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
                   />

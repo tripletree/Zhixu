@@ -4,6 +4,7 @@ import { Motion } from '../lib/motion'
 import { ArrowRight, Sparkles, TrendingUp, Activity } from 'lucide-vue-next'
 
 const reduced = useReducedMotion()
+const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
 
 // Layered entrance: each element floats up with an increasing delay.
@@ -37,7 +38,7 @@ const fadeIn = (delay: number) => ({
         class="h-full w-full"
       >
         <img
-          src="/hero-placeholder.svg"
+          :src="`${baseUrl}hero-placeholder.svg`"
           alt="知序 FabricMind 秀场与面料主视觉占位图"
           class="h-full w-full object-cover"
         />

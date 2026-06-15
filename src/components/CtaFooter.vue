@@ -60,6 +60,5 @@ import Reveal from './ui/Reveal.vue'
           京ICP备10009259号
         </a>
       </div>
-    </div>
   </footer>
 </template>

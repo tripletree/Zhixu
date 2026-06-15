@@ -100,7 +100,7 @@ const fadeIn = (delay: number) => ({
 
     <!-- Restrained, high-contrast copy column -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
-      <div class="max-w-xl">
+      <div class="w-full max-w-xl lg:w-1/3 lg:max-w-none">
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />

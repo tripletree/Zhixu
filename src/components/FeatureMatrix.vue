@@ -40,7 +40,7 @@ const cards = [
 </script>
 
 <template>
-  <section id="features" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+    <section id="features" class="relative border-t border-bone/[0.06] py-[54px]">
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
         eyebrow="Core Modules · 核心功能矩阵"

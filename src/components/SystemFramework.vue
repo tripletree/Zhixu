@@ -56,7 +56,7 @@ const connectorMotion = (i: number) => ({
 </script>
 
 <template>
-  <section id="framework" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+    <section id="framework" class="relative border-t border-bone/[0.06] py-[54px]">
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading

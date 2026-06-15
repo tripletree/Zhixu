@@ -39,7 +39,7 @@ const cardMotion = (i: number) => ({
 </script>
 
 <template>
-  <section id="scenarios" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+    <section id="scenarios" class="relative border-t border-bone/[0.06] py-[54px]">
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-20" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">

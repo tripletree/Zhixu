@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next'
 import Reveal from './ui/Reveal.vue'
-import BrandMark from './ui/BrandMark.vue'
-
-const links = [
-  { label: '系统框架', href: '#framework' },
-  { label: '功能矩阵', href: '#features' },
-  { label: '业务场景', href: '#scenarios' },
-]
 </script>
 
 <template>
@@ -53,48 +46,7 @@ const links = [
 
   <!-- Footer -->
   <footer class="border-t border-bone/[0.06] bg-ink-950">
-    <div class="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-      <div class="flex flex-col justify-between gap-10 md:flex-row md:items-start">
-        <div class="max-w-xs">
-          <div class="flex items-center gap-3">
-            <BrandMark :size="32" />
-            <span class="flex items-baseline gap-2 leading-none">
-              <span class="text-[15px] font-medium tracking-wide text-bone">知序</span>
-              <span class="font-display text-[15px] italic tracking-wide text-bone-soft">FabricMind</span>
-            </span>
-          </div>
-          <p class="mt-4 text-[13px] leading-relaxed text-bone-dim">
-            面向纺织产品开发的智能决策系统。<br />
-            AI Decision Intelligence for Fashion and Textile Product Development.
-          </p>
-        </div>
-
-        <div class="flex gap-16">
-          <div>
-            <h4 class="eyebrow text-bone-dim">产品</h4>
-            <ul class="mt-4 space-y-2.5">
-              <li v-for="link in links" :key="link.href">
-                <a :href="link.href" class="text-[13px] text-bone-soft transition-colors hover:text-bone">{{ link.label }}</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="eyebrow text-bone-dim">联系</h4>
-            <ul class="mt-4 space-y-2.5">
-              <li>
-                <a href="#demo" class="text-[13px] text-bone-soft transition-colors hover:text-bone">预约演示</a>
-              </li>
-              <li>
-                <a href="mailto:contact@fabricmind.ai" class="text-[13px] text-bone-soft transition-colors hover:text-bone">商务咨询</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Compliance bar -->
-    <div class="border-t border-bone/[0.06]">
       <div
         class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-[12px] text-mist sm:flex-row lg:px-10"
       >

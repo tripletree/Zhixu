@@ -123,7 +123,7 @@ const fadeIn = (delay: number) => ({
 
         <Motion v-bind="rise(0.52)">
           <p class="mt-4 max-w-lg text-[15px] leading-relaxed text-bone-dim">
-            以数据智能驱动更精准的趋势判断，更高效的材料研发与更胜一筹的提案表达。
+            以数据智能驱动更精准的趋势判断，更高效的材料研发与更胜一筹的提案表达
           </p>
         </Motion>
 

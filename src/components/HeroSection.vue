@@ -104,7 +104,7 @@ const fadeIn = (delay: number) => ({
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />
-            <span class="eyebrow text-bone-soft">Fashion Intelligence · 让时尚判断成为可验证的 AI 决策</span>
+            <span class="eyebrow text-bone-soft" style="font-size: 12px;"> 让时尚判断成为可验证的 AI 决策</span>
           </div>
         </Motion>
 
@@ -149,21 +149,6 @@ const fadeIn = (delay: number) => ({
       </div>
     </div>
 
-    <!-- Scroll cue -->
-    <Motion
-      :initial="reduced ? false : { opacity: 0 }"
-      :animate="{ opacity: 1 }"
-      :transition="{ duration: 1, delay: 1.3 }"
-      class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-    >
-      <div class="flex flex-col items-center gap-2 text-mist">
-        <span class="eyebrow text-[10px]">向下浏览</span>
-        <Motion
-          :animate="reduced ? {} : { y: [0, 7, 0] }"
-          :transition="{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }"
-          class="h-7 w-px bg-gradient-to-b from-bone/40 to-transparent"
-        />
-      </div>
-    </Motion>
+
   </section>
 </template>

@@ -23,7 +23,7 @@ const links = [
       style="background: radial-gradient(circle, rgba(201, 173, 124, 0.12), transparent 65%)"
     />
 
-    <div class="relative mx-auto max-w-4xl px-6 py-32 text-center lg:py-40">
+    <div class="relative mx-auto max-w-4xl px-6 py-16 text-center lg:py-20">
       <Reveal :y="16">
         <span class="eyebrow text-azure">Let's talk · 预约演示</span>
       </Reveal>

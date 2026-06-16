@@ -156,6 +156,14 @@
     text-wrap: balance;
   }
 
+  /* Text color overrides */
+  .text-bone {
+    color: #ffffff;
+  }
+  .text-bone-dim {
+    color: #eceae1;
+  }
+
   /* Reduced-motion shimmer guard handled per-component */
   @keyframes shimmer-sweep {
     0% {

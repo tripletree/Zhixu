@@ -75,7 +75,7 @@ const connectorMotion = (i: number) => ({
             class="group relative flex-1"
           >
             <div
-              class="panel glow-blue relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-colors duration-300 hover:border-azure/25"
+              class="panel glow-blue glow-blue-sm relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-colors duration-300 hover:border-azure/25"
             >
               <span class="absolute right-5 top-5 font-display text-sm italic text-bone-dim/50">
                 0{{ i + 1 }}

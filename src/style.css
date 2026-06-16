@@ -145,6 +145,14 @@
     pointer-events: none;
   }
 
+  /* Smaller glow for compact cards */
+  .glow-blue-sm::after {
+    width: 130px;
+    height: 130px;
+    right: -40px;
+    top: -40px;
+  }
+
   .eyebrow {
     font-size: 0.72rem;
     letter-spacing: 0.22em;

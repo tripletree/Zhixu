@@ -74,7 +74,7 @@ const cardMotion = (i: number) => ({
               class="group"
             >
               <div
-                class="panel glow-blue relative flex h-full flex-col overflow-hidden rounded-2xl p-3 transition-colors duration-300 hover:border-azure/25"
+                class="panel glow-blue glow-blue-sm relative flex h-full flex-col overflow-hidden rounded-2xl p-3 transition-colors duration-300 hover:border-azure/25"
               >
                 <div class="relative z-[1] overflow-hidden rounded-xl border border-bone/[0.07]">
                   <img

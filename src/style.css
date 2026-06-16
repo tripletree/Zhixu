@@ -128,6 +128,23 @@
     z-index: 0;
   }
 
+  /* Blue radial glow in the top-right corner — matches .feature-card::after */
+  .glow-blue {
+    position: relative;
+    overflow: hidden;
+  }
+  .glow-blue::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -60px;
+    top: -60px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(46, 107, 255, 0.16), transparent 68%);
+    pointer-events: none;
+  }
+
   .eyebrow {
     font-size: 0.72rem;
     letter-spacing: 0.22em;

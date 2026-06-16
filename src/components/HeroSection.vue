@@ -113,7 +113,7 @@ const drift = (dur: number, dist = 12) =>
 
         <Motion v-bind="rise(0.4)">
           <p class="mt-7 text-lg font-light leading-relaxed text-bone-soft sm:text-xl">
-            面向纺织产品开发的<br /><span class="font-normal text-bone">DATA+BI+AI</span><br />智能决策系统
+            面向纺织产品开发的<br /><span class="font-normal text-bone">DATA+BI+AI</span> <br />智能决策系统
           </p>
         </Motion>
 

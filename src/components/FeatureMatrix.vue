@@ -21,19 +21,19 @@ const cards = [
   {
     eyebrow: '智能试衣',
     title: '不打样，先看效果',
-    desc: '选定模特、搭配上下装，AI 即时生成上身效果，免实物打样快速验证款式与搭配，让选款决策更快、更直观。',
+    desc: '选定模特、搭配上下装，AI 即时生成试穿效果，免打样快速验证款式与搭配，让选款更快、更直观。',
     mock: TryOnMock,
   },
   {
     eyebrow: 'AI 助手',
     title: '把分析师，装进对话框',
-    desc: '用自然语言追问趋势、材料与竞品，AI 基于平台数据即时作答，并附上图表依据——复杂分析，一句话直达。',
+    desc: '用自然语言追问趋势、材料与竞品，AI 基于平台数据即时作答——复杂分析，一句话直达。',
     mock: ChatMock,
   },
   {
     eyebrow: '智能报告',
     title: '一键从洞察到提案',
-    desc: '自动将分析结果整理为图文报告与可视化提案，一键生成并导出 PPT——让团队把时间花在判断上，而不是排版上。',
+    desc: '自动将分析结果整理为图文提案，一键生成导出 PPT——让团队把时间花在判断上，而不是排版上。',
     mock: ReportMock,
   },
 ]
@@ -44,8 +44,8 @@ const cards = [
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
         eyebrow="Products · 产品能力"
-        title="一体化看板，洞察全局"
-        copy="不是单点工具，而是多模块协同的决策系统——数据智能内核与试衣、问答、成稿三大能力彼此衔接，让洞察一路落到业务。"
+        title="数据智能内核，三大AI应用"
+        copy="多模块协同——数据智能内核与智能试衣、问答、提案三大应用让洞察一路落到业务。"
       />
 
       <div class="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:mt-20">
@@ -60,7 +60,7 @@ const cards = [
           >
             <div class="pointer-events-none absolute inset-0 bg-grid-fine opacity-40" />
             <div class="relative flex flex-col justify-center">
-              <span class="eyebrow text-azure">数据智能内核 · 品牌看板 / 秀场 / 数据分析</span>
+              <span class="eyebrow text-azure">品牌看板 / 秀场 / 数据分析</span>
               <h3 class="mt-4 text-balance text-2xl font-bold leading-snug tracking-tight text-bone sm:text-3xl">
                 一体化看板，洞察全局
               </h3>

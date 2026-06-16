@@ -62,7 +62,7 @@ const connectorMotion = (i: number) => ({
       <SectionHeading
         eyebrow="Solution · 解决方案"
         title="从复杂到清晰，让决策更有方向"
-        copy="整合多维数据与行业知识，结合 AI 洞察与分析引擎，为产品开发与客户提案提供可靠的决策依据。"
+        copy="整合多维数据与行业知识，结合 AI 洞察与分析，为产品开发与客户提案提供可靠的决策依据。"
       />
 
       <!-- Pipeline -->

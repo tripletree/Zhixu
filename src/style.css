@@ -99,15 +99,32 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 
-  /* Frosted / fog glass panel */
+  /* Frosted / fog glass panel — matches FabricMind landing .glass-card */
   .glass {
-    background: linear-gradient(
-      160deg,
-      rgba(255, 255, 255, 0.045),
-      rgba(255, 255, 255, 0.012)
-    );
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(236, 234, 225, 0.08);
+    position: relative;
+    background: rgba(9, 11, 16, 0.52);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+  }
+
+  /* Blue radial glow in the top-right corner — matches .feature-card::after */
+  .glow-blue {
+    position: relative;
+    overflow: hidden;
+  }
+  .glow-blue::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -60px;
+    top: -60px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(46, 107, 255, 0.16), transparent 68%);
+    pointer-events: none;
   }
 
   .eyebrow {

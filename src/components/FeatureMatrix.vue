@@ -56,7 +56,7 @@ const cards = [
           class="group md:col-span-2 lg:col-span-3"
         >
           <div
-            class="glass relative grid grid-cols-1 gap-8 overflow-hidden rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20 lg:grid-cols-2 lg:p-9"
+            class="glass glow-blue relative grid grid-cols-1 gap-8 rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20 lg:grid-cols-2 lg:p-9"
           >
             <div class="pointer-events-none absolute inset-0 bg-grid-fine opacity-40" />
             <div class="relative flex flex-col justify-center">
@@ -83,7 +83,7 @@ const cards = [
           class="group"
         >
           <div
-            class="glass flex h-full flex-col gap-5 overflow-hidden rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20"
+            class="glass glow-blue flex h-full flex-col gap-5 rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20"
           >
             <div>
               <span class="eyebrow text-azure">{{ card.eyebrow }}</span>

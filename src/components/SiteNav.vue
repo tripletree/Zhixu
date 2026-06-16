@@ -18,8 +18,8 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const links = [
   { label: '解决方案', href: '#framework' },
-  { label: '产品能力', href: '#features' },
   { label: '业务场景', href: '#scenarios' },
+  { label: '产品能力', href: '#features' },
 ]
 </script>
 

@@ -44,7 +44,7 @@ const cards = [
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
         eyebrow="Products · 产品能力"
-        title="一个分析内核，三个应用加速器"
+        title="一体化看板，洞察全局"
         copy="不是单点工具，而是多模块协同的决策系统——数据智能内核与试衣、问答、成稿三大能力彼此衔接，让洞察一路落到业务。"
       />
 

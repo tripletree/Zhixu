@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next'
 import Reveal from './ui/Reveal.vue'
+import { useContactDialog } from '../composables/useContactDialog'
+
+const { open: openContact } = useContactDialog()
 </script>
 
 <template>
@@ -32,13 +35,14 @@ import Reveal from './ui/Reveal.vue'
       </Reveal>
       <Reveal :y="24" :delay="0.24">
         <div class="mt-10 flex justify-center">
-          <a
-            href="mailto:contact@fabricmind.ai?subject=预约知序%20FabricMind%20产品演示"
+          <button
+            type="button"
             class="group inline-flex items-center gap-2.5 rounded-full bg-bone px-8 py-4 text-[15px] font-medium tracking-wide text-ink-950 transition-all hover:bg-white hover:shadow-[0_0_44px_-8px_rgba(236,234,225,0.45)]"
+            @click="openContact"
           >
             预约产品演示
             <ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </button>
         </div>
       </Reveal>
     </div>

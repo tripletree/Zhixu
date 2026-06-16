@@ -2,7 +2,9 @@
 import { useReducedMotion } from 'motion-v'
 import { Motion } from '../lib/motion'
 import { ArrowRight, Sparkles, TrendingUp, Activity } from 'lucide-vue-next'
+import { useContactDialog } from '../composables/useContactDialog'
 
+const { open: openContact } = useContactDialog()
 const reduced = useReducedMotion()
 const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -129,13 +131,14 @@ const fadeIn = (delay: number) => ({
 
         <Motion v-bind="rise(0.66)">
           <div class="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#demo"
+            <button
+              type="button"
               class="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-[14px] font-medium tracking-wide text-ink-950 transition-all hover:bg-white hover:shadow-[0_0_36px_-8px_rgba(236,234,225,0.4)]"
+              @click="openContact"
             >
               预约演示
               <ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </button>
             <a
               href="#framework"
               class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-bone/35 hover:bg-bone/[0.04]"

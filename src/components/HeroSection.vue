@@ -21,12 +21,6 @@ const drift = (dur: number, dist = 12) =>
   reduced.value
     ? {}
     : { y: [0, -dist, 0], transition: { duration: dur, repeat: Infinity, ease: 'easeInOut' } }
-
-const fadeIn = (delay: number) => ({
-  initial: reduced.value ? false : { opacity: 0, scale: 0.96 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 1, delay, ease: EASE },
-})
 </script>
 
 <template>
@@ -125,7 +119,7 @@ const fadeIn = (delay: number) => ({
 
         <Motion v-bind="rise(0.52)">
           <p class="mt-4 max-w-lg text-[15px] leading-relaxed text-bone-dim">
-            以数据智能驱动更精准的趋势判断，更高效的材料研发与更胜一筹的提案表达
+            以数据智能驱动更精准的趋势判断，更高效的材料研发���更胜一筹的提案表达
           </p>
         </Motion>
 

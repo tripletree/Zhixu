@@ -5,6 +5,7 @@ import SystemFramework from './components/SystemFramework.vue'
 import FeatureMatrix from './components/FeatureMatrix.vue'
 import BusinessScenarios from './components/BusinessScenarios.vue'
 import CtaFooter from './components/CtaFooter.vue'
+import ContactDialog from './components/ContactDialog.vue'
 </script>
 
 <template>
@@ -13,9 +14,10 @@ import CtaFooter from './components/CtaFooter.vue'
     <main>
       <HeroSection />
       <SystemFramework />
-      <FeatureMatrix />
       <BusinessScenarios />
+      <FeatureMatrix />
       <CtaFooter />
     </main>
+    <ContactDialog />
   </div>
 </template>

@@ -2,6 +2,9 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import { ArrowUpRight } from 'lucide-vue-next'
 import BrandMark from './ui/BrandMark.vue'
+import { useContactDialog } from '../composables/useContactDialog'
+
+const { open: openContact } = useContactDialog()
 
 const scrolled = ref(false)
 const onScroll = () => {
@@ -14,8 +17,8 @@ onMounted(() => {
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const links = [
-  { label: '系统框架', href: '#framework' },
-  { label: '功能矩阵', href: '#features' },
+  { label: '解决方案', href: '#framework' },
+  { label: '产品能力', href: '#features' },
   { label: '业务场景', href: '#scenarios' },
 ]
 </script>
@@ -45,13 +48,14 @@ const links = [
         </a>
       </div>
 
-      <a
-        href="#demo"
+      <button
+        type="button"
         class="group inline-flex items-center gap-1.5 rounded-full border border-bone/15 bg-bone/[0.03] px-4 py-2 text-[13px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10"
+        @click="openContact"
       >
         预约演示
         <ArrowUpRight class="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </a>
+      </button>
     </nav>
   </header>
 </template>

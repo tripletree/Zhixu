@@ -56,11 +56,11 @@ const connectorMotion = (i: number) => ({
 </script>
 
 <template>
-  <section id="framework" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+  <section id="framework" class="relative border-t border-bone/[0.06] py-14 lg:py-[72px]">
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
-        eyebrow="System Framework · 系统整体框架"
+        eyebrow="Solution · 解决方案"
         title="从复杂到清晰，让决策更有方向"
         copy="整合多维数据与行业知识，结合 AI 洞察与分析引擎，为产品开发与客户提案提供可靠的决策依据。"
       />

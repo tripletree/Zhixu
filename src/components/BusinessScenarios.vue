@@ -39,7 +39,7 @@ const cardMotion = (i: number) => ({
 </script>
 
 <template>
-  <section id="scenarios" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+  <section id="scenarios" class="relative border-t border-bone/[0.06] py-14 lg:py-[72px]">
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-20" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
@@ -48,7 +48,7 @@ const cardMotion = (i: number) => ({
           <Reveal :y="16">
             <div class="flex items-center gap-2.5">
               <span class="h-px w-6 bg-azure/50" />
-              <span class="eyebrow text-azure">Core Scenarios · 核心业务场景</span>
+              <span class="eyebrow text-azure">Scenarios · 业务场景</span>
             </div>
           </Reveal>
           <Reveal :y="22" :delay="0.06">

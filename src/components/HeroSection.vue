@@ -2,7 +2,9 @@
 import { useReducedMotion } from 'motion-v'
 import { Motion } from '../lib/motion'
 import { ArrowRight, Sparkles, TrendingUp, Activity } from 'lucide-vue-next'
+import { useContactDialog } from '../composables/useContactDialog'
 
+const { open: openContact } = useContactDialog()
 const reduced = useReducedMotion()
 const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -100,11 +102,11 @@ const fadeIn = (delay: number) => ({
 
     <!-- Restrained, high-contrast copy column -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
-      <div class="max-w-xl">
+      <div class="w-full max-w-xl lg:w-1/3 lg:max-w-none">
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />
-            <span class="eyebrow text-bone-soft">Fashion Intelligence · 让时尚判断成为可验证的 AI 决策</span>
+            <span class="eyebrow text-bone-soft" style="font-size: 12px;"> 让时尚判断成为可验证的数据决策</span>
           </div>
         </Motion>
 
@@ -123,19 +125,20 @@ const fadeIn = (delay: number) => ({
 
         <Motion v-bind="rise(0.52)">
           <p class="mt-4 max-w-lg text-[15px] leading-relaxed text-bone-dim">
-            以数据智能驱动更精准的趋势判断，更高效的材料研发与更胜一筹的提案表达。
+            以数据智能驱动更精准的趋势判断，更高效的材料研发与更胜一筹的提案表达
           </p>
         </Motion>
 
         <Motion v-bind="rise(0.66)">
           <div class="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#demo"
+            <button
+              type="button"
               class="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-[14px] font-medium tracking-wide text-ink-950 transition-all hover:bg-white hover:shadow-[0_0_36px_-8px_rgba(236,234,225,0.4)]"
+              @click="openContact"
             >
               预约演示
               <ArrowRight class="size-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </button>
             <a
               href="#framework"
               class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-bone/35 hover:bg-bone/[0.04]"
@@ -145,35 +148,10 @@ const fadeIn = (delay: number) => ({
           </div>
         </Motion>
 
-        <Motion v-bind="fadeIn(0.9)">
-          <div class="mt-14 flex items-center gap-6 text-[12px] tracking-wide text-mist">
-            <span>品牌监测</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>秀场趋势</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>商品分析</span>
-            <span class="h-3 w-px bg-bone/15" />
-            <span>智能报告</span>
-          </div>
-        </Motion>
+
       </div>
     </div>
 
-    <!-- Scroll cue -->
-    <Motion
-      :initial="reduced ? false : { opacity: 0 }"
-      :animate="{ opacity: 1 }"
-      :transition="{ duration: 1, delay: 1.3 }"
-      class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-    >
-      <div class="flex flex-col items-center gap-2 text-mist">
-        <span class="eyebrow text-[10px]">向下浏览</span>
-        <Motion
-          :animate="reduced ? {} : { y: [0, 7, 0] }"
-          :transition="{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }"
-          class="h-7 w-px bg-gradient-to-b from-bone/40 to-transparent"
-        />
-      </div>
-    </Motion>
+
   </section>
 </template>

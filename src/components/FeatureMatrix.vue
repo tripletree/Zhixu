@@ -40,10 +40,10 @@ const cards = [
 </script>
 
 <template>
-  <section id="features" class="relative border-t border-bone/[0.06] py-28 lg:py-36">
+  <section id="features" class="relative border-t border-bone/[0.06] py-14 lg:py-[72px]">
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
-        eyebrow="Core Modules · 核心功能矩阵"
+        eyebrow="Products · 产品能力"
         title="一个分析内核，三个应用加速器"
         copy="不是单点工具，而是多模块协同的决策系统——数据智能内核与试衣、问答、成稿三大能力彼此衔接，让洞察一路落到业务。"
       />

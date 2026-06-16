@@ -48,7 +48,7 @@ const cardMotion = (i: number) => ({
           <Reveal :y="16">
             <div class="flex items-center gap-2.5">
               <span class="h-px w-6 bg-azure/50" />
-              <span class="eyebrow text-azure">Core Scenarios · 核心业务场景</span>
+              <span class="eyebrow text-azure">Scenarios · 业务场景</span>
             </div>
           </Reveal>
           <Reveal :y="22" :delay="0.06">

@@ -9,7 +9,7 @@ import ContactDialog from './components/ContactDialog.vue'
 </script>
 
 <template>
-  <div class="relative min-h-screen bg-ink-950 text-bone antialiased">
+  <div class="relative min-h-screen text-bone antialiased">
     <SiteNav />
     <main>
       <HeroSection />

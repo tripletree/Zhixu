@@ -62,7 +62,7 @@ const cards = [
             <div class="relative flex flex-col justify-center">
               <span class="eyebrow text-azure">数据智能内核 · 品牌看板 / 秀场 / 数据分析</span>
               <h3 class="mt-4 text-balance text-2xl font-bold leading-snug tracking-tight text-bone sm:text-3xl">
-                把散落的市场信号，<br class="hidden sm:block" />变成可查询的决策依据
+                一体化看板，洞察全局
               </h3>
               <p class="mt-4 max-w-md text-[15px] leading-relaxed text-bone-dim">
                 持续追踪品牌上新与全球秀场，从品类、人群、色彩、材料到肌理多维拆解，让模糊的「市场感觉」变成结构化、可验证的洞察。

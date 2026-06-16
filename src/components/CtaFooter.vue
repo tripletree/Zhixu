@@ -30,7 +30,7 @@ const { open: openContact } = useContactDialog()
       </Reveal>
       <Reveal :y="24" :delay="0.16">
         <p class="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-bone-dim">
-          让时尚判断成为可验证的 AI 决策。预约一次产品演示，看见数据智能如何融入你的产品开发与提案流程。
+          预约一次产品演示，看见数据智能如何融入你的产品开发与提案流程。
         </p>
       </Reveal>
       <Reveal :y="24" :delay="0.24">

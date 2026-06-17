@@ -56,7 +56,17 @@ const connectorMotion = (i: number) => ({
 </script>
 
 <template>
-  <section id="framework" class="relative border-t border-bone/[0.06] py-14 lg:py-[72px]">
+  <section id="framework" class="relative py-14 lg:py-[72px]">
+    <!-- Blend the top of this section into the hero's navy, fading down into the dark -->
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 h-[420px]"
+      style="background: linear-gradient(to bottom, #091C38 0%, rgba(9, 28, 56, 0.55) 30%, rgba(9, 28, 56, 0.18) 60%, transparent 100%);"
+    />
+    <!-- Soft top-right azure halo echoing the hero glow -->
+    <div
+      class="pointer-events-none absolute right-0 top-0 h-[520px] w-[60%] blur-3xl"
+      style="background: radial-gradient(ellipse at 75% 0%, rgba(56, 189, 248, 0.16) 0%, rgba(56, 189, 248, 0.05) 38%, transparent 70%);"
+    />
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading

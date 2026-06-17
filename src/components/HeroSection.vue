@@ -24,7 +24,17 @@ const drift = (dur: number, dist = 12) =>
 </script>
 
 <template>
-  <section id="top" class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden">
+  <section
+    id="top"
+    class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
+    style="background: linear-gradient(100deg, #020617 0%, #041228 38%, #071C3D 68%, #0B2348 100%);"
+  >
+    <!-- Layer 3: Large soft radial energy field, center-right -->
+    <div
+      class="pointer-events-none absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl"
+      style="width: min(1100px, 90vw); height: min(1100px, 90vw); background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(56, 189, 248, 0.07) 35%, transparent 68%);"
+    />
+
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">
       <Motion
@@ -39,18 +49,28 @@ const drift = (dur: number, dist = 12) =>
           class="h-full w-full object-cover"
         />
       </Motion>
-      <!-- Fade the image into the dark on its left edge -->
-      <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/55 to-transparent lg:via-ink-950/20" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
+      <!-- Fade the image into the shared navy field on its left edge -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#041228] via-[#06182f]/55 to-transparent lg:via-[#06182f]/20" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#041228]/40" />
     </div>
 
-    <!-- Technical overlays -->
+    <!-- Layer 5: Subtle bezier data-flow lines extending from the visual toward the copy -->
+    <svg
+      class="pointer-events-none absolute inset-0 h-full w-full"
+      preserveAspectRatio="none"
+      viewBox="0 0 1440 900"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path d="M1440 250 C 1080 300, 760 360, 420 520 S -40 760, -160 820" stroke="#9ec7ff" stroke-width="1" opacity="0.06" />
+      <path d="M1440 420 C 1120 440, 820 470, 520 600 S 60 800, -120 860" stroke="#7fb2ff" stroke-width="1" opacity="0.05" />
+      <path d="M1440 600 C 1140 600, 860 620, 560 700 S 120 840, -100 900" stroke="#c9ad7c" stroke-width="1" opacity="0.04" />
+      <path d="M1440 140 C 1160 220, 900 300, 620 420 S 140 620, -80 700" stroke="#9ec7ff" stroke-width="1" opacity="0.04" />
+    </svg>
+
+    <!-- Layer 4: Technical grid + noise overlays -->
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-60" />
     <div class="pointer-events-none absolute inset-0 bg-noise opacity-[0.05]" />
-    <div
-      class="pointer-events-none absolute -right-40 top-1/4 size-[44rem] rounded-full opacity-50 blur-3xl"
-      style="background: radial-gradient(circle, rgba(87, 184, 212, 0.16), transparent 65%)"
-    />
 
     <!-- Floating data annotations over the visual -->
     <div class="pointer-events-none absolute inset-0 hidden lg:block">

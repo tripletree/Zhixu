@@ -60,7 +60,7 @@ const connectorMotion = (i: number) => ({
     <!-- Blend the top of this section into the hero's navy, fading down into the dark -->
     <div
       class="pointer-events-none absolute inset-x-0 top-0 h-[420px]"
-      style="background: linear-gradient(to bottom, #091C38 0%, rgba(9, 28, 56, 0.55) 30%, rgba(9, 28, 56, 0.18) 60%, transparent 100%);"
+      style="background: linear-gradient(to bottom, #070D19 0%, rgba(7, 13, 25, 0.55) 30%, rgba(7, 13, 25, 0.18) 60%, transparent 100%);"
     />
     <!-- Soft top-right azure halo echoing the hero glow -->
     <div

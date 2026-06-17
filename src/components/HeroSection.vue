@@ -27,7 +27,7 @@ const drift = (dur: number, dist = 12) =>
   <section
     id="top"
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
-    style="background: linear-gradient(100deg, #020617 0%, #041228 38%, #071C3D 68%, #0B2348 100%);"
+    style="background: linear-gradient(100deg, #041228 0%, #051a37 45%, #071C3D 72%, #0B2348 100%);"
   >
     <!-- Layer 3: Large soft radial energy field, center-right -->
     <div
@@ -46,12 +46,15 @@ const drift = (dur: number, dist = 12) =>
         <img
           :src="`${baseUrl}hero-visual.png`"
           alt="知序 FabricMind 数据智能主视觉"
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover object-right"
         />
       </Motion>
       <!-- Fade the image into the shared navy field on its left edge -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#041228] via-[#06182f]/55 to-transparent lg:via-[#06182f]/20" />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#041228]/40" />
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(to right, #061a38 0%, rgba(6, 26, 56, 0.85) 18%, rgba(7, 28, 61, 0.45) 38%, rgba(7, 28, 61, 0.15) 60%, transparent 80%);"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#041228] via-transparent to-[#041228]/30" />
     </div>
 
     <!-- Layer 5: Subtle bezier data-flow lines extending from the visual toward the copy -->

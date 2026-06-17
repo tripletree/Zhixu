@@ -27,7 +27,7 @@ const drift = (dur: number, dist = 12) =>
   <section
     id="top"
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
-    style="background: linear-gradient(100deg, #041228 0%, #051a37 45%, #071C3D 72%, #0B2348 100%);"
+    style="background-color: #091C38;"
   >
     <!-- Layer 3: Large soft radial energy field, center-right -->
     <div
@@ -49,12 +49,12 @@ const drift = (dur: number, dist = 12) =>
           class="h-full w-full object-cover object-right"
         />
       </Motion>
-      <!-- Fade the image into the shared navy field on its left edge -->
+      <!-- Fade the image into the shared solid navy field on its left edge -->
       <div
         class="absolute inset-0"
-        style="background: linear-gradient(to right, #061a38 0%, rgba(6, 26, 56, 0.85) 18%, rgba(7, 28, 61, 0.45) 38%, rgba(7, 28, 61, 0.15) 60%, transparent 80%);"
+        style="background: linear-gradient(to right, #091C38 0%, #091C38 12%, rgba(9, 28, 56, 0.7) 32%, rgba(9, 28, 56, 0.3) 55%, transparent 78%);"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#041228] via-transparent to-[#041228]/30" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#091C38] via-transparent to-[#091C38]/30" />
     </div>
 
     <!-- Layer 5: Subtle bezier data-flow lines extending from the visual toward the copy -->

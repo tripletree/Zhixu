@@ -54,7 +54,10 @@ const drift = (dur: number, dist = 12) =>
         class="absolute inset-0"
         style="background: linear-gradient(to right, #091C38 0%, #091C38 12%, rgba(9, 28, 56, 0.7) 32%, rgba(9, 28, 56, 0.3) 55%, transparent 78%);"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#091C38] via-transparent to-[#091C38]/30" />
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(to top, #091C38 0%, transparent 50%, rgba(9, 28, 56, 0.3) 100%);"
+      />
     </div>
 
     <!-- Layer 5: Subtle bezier data-flow lines extending from the visual toward the copy -->

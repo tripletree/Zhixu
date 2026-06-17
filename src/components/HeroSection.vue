@@ -54,8 +54,7 @@ const drift = (dur: number, dist = 12) =>
       />
     </div>
 
-    <!-- Layer 4: Technical grid + noise overlays -->
-    <div class="pointer-events-none absolute inset-0 bg-grid opacity-60" />
+    <!-- Layer 4: Noise overlay -->
     <div class="pointer-events-none absolute inset-0 bg-noise opacity-[0.05]" />
 
     <!-- Floating data annotations over the visual -->

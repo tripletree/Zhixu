@@ -27,7 +27,7 @@ const drift = (dur: number, dist = 12) =>
   <section
     id="top"
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
-    style="background: linear-gradient(to right, #111C2E 0%, #0C1E36 35%, #091C38 60%);"
+    style="background-color: #070D19;"
   >
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">
@@ -46,11 +46,11 @@ const drift = (dur: number, dist = 12) =>
       <!-- Fade the image into the shared solid navy field on its left edge -->
       <div
         class="absolute inset-0"
-        style="background: linear-gradient(to right, #091C38 0%, #091C38 12%, rgba(9, 28, 56, 0.7) 32%, rgba(9, 28, 56, 0.3) 55%, transparent 78%);"
+        style="background: linear-gradient(to right, #070D19 0%, #070D19 12%, rgba(7, 13, 25, 0.7) 32%, rgba(7, 13, 25, 0.3) 55%, transparent 78%);"
       />
       <div
         class="absolute inset-0"
-        style="background: linear-gradient(to top, #091C38 0%, transparent 50%, rgba(9, 28, 56, 0.3) 100%);"
+        style="background: linear-gradient(to top, #070D19 0%, transparent 50%, rgba(7, 13, 25, 0.3) 100%);"
       />
     </div>
 
@@ -101,7 +101,7 @@ const drift = (dur: number, dist = 12) =>
 
     <!-- Restrained, high-contrast copy column -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
-      <div class="glass w-full max-w-xl rounded-3xl p-8 lg:w-[42%] lg:max-w-none lg:p-10">
+      <div class="w-full max-w-xl lg:w-[42%] lg:max-w-none">
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />

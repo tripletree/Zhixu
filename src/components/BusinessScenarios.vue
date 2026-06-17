@@ -73,8 +73,10 @@ const cardMotion = (i: number) => ({
               :while-hover="reduced ? {} : { y: -6 }"
               class="group"
             >
-              <div class="flex h-full flex-col">
-                <div class="relative overflow-hidden rounded-2xl border border-bone/[0.07]">
+              <div
+                class="panel glow-blue glow-blue-sm relative flex h-full flex-col overflow-hidden rounded-2xl p-3 transition-colors duration-300 hover:border-azure/25"
+              >
+                <div class="relative z-[1] overflow-hidden rounded-xl border border-bone/[0.07]">
                   <img
                     :src="baseUrl + s.img"
                     :alt="s.title"
@@ -83,8 +85,8 @@ const cardMotion = (i: number) => ({
                   <div class="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent" />
                   <span class="absolute left-3 top-3 font-display text-sm italic text-bone-soft/70">0{{ i + 1 }}</span>
                 </div>
-                <h3 class="mt-4 text-[15px] font-semibold tracking-tight text-bone">{{ s.title }}</h3>
-                <p class="mt-1.5 text-[13px] leading-relaxed text-bone-dim">{{ s.desc }}</p>
+                <h3 class="relative z-[1] mt-4 px-1 text-[15px] font-semibold tracking-tight text-bone">{{ s.title }}</h3>
+                <p class="relative z-[1] mt-1.5 px-1 pb-1 text-[13px] leading-relaxed text-bone-dim">{{ s.desc }}</p>
               </div>
             </Motion>
           </div>

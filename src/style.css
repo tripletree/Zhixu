@@ -99,15 +99,33 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 
-  /* Frosted / fog glass panel — matches FabricMind landing .glass-card */
+  /* Frosted / fog glass panel */
   .glass {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(236, 234, 225, 0.08);
+  }
+
+  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.) */
+  .panel {
     position: relative;
-    background: rgba(9, 11, 16, 0.52);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+      rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-    overflow: hidden;
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   /* Blue radial glow in the top-right corner — matches .feature-card::after */
@@ -127,6 +145,14 @@
     pointer-events: none;
   }
 
+  /* Smaller glow for compact cards */
+  .glow-blue-sm::after {
+    width: 130px;
+    height: 130px;
+    right: -40px;
+    top: -40px;
+  }
+
   .eyebrow {
     font-size: 0.72rem;
     letter-spacing: 0.22em;
@@ -136,6 +162,14 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Text color overrides */
+  .text-bone {
+    color: #ffffff;
+  }
+  .text-bone-dim {
+    color: #eceae1;
   }
 
   /* Reduced-motion shimmer guard handled per-component */

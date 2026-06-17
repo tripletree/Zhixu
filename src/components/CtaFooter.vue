@@ -24,13 +24,13 @@ const { open: openContact } = useContactDialog()
         <span class="eyebrow text-azure">Let's talk · 预约演示</span>
       </Reveal>
       <Reveal :y="24" :delay="0.08">
-        <h2 class="mx-auto mt-6 max-w-3xl text-balance text-4xl font-bold leading-[1.18] tracking-tight text-bone sm:text-5xl">
-          与知序一起，让每一次决策更有据可循
+        <h2 class="ml-[31px] mr-[49px] mt-6 max-w-3xl text-balance text-4xl font-bold leading-[1.18] tracking-tight text-bone sm:text-5xl">
+          与知序一起，让每一次决策<br />更有据可循
         </h2>
       </Reveal>
       <Reveal :y="24" :delay="0.16">
         <p class="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-bone-dim">
-          让时尚判断成为可验证的 AI 决策。预约一次产品演示，看见数据智能如何融入你的产品开发与提案流程。
+          预约一次产品演示，看见数据智能如何融入你的产品开发与提案流程。
         </p>
       </Reveal>
       <Reveal :y="24" :delay="0.24">

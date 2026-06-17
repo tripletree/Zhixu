@@ -29,12 +29,6 @@ const drift = (dur: number, dist = 12) =>
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
     style="background-color: #091C38;"
   >
-    <!-- Layer 3: Large soft radial energy field, center-right -->
-    <div
-      class="pointer-events-none absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl"
-      style="width: min(1100px, 90vw); height: min(1100px, 90vw); background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(56, 189, 248, 0.07) 35%, transparent 68%);"
-    />
-
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">
       <Motion

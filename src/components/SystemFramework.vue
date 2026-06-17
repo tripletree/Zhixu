@@ -62,7 +62,7 @@ const connectorMotion = (i: number) => ({
       <SectionHeading
         eyebrow="Solution · 解决方案"
         title="从复杂到清晰，让决策更有方向"
-        copy="整合多维数据与行业知识，结合 AI 洞察与分析引擎，为产品开发与客户提案提供可靠的决策依据。"
+        copy="整合多维数据与行业知识，结合 AI 洞察与分析，为产品开发与客户提案提供可靠的决策依据。"
       />
 
       <!-- Pipeline -->
@@ -75,7 +75,7 @@ const connectorMotion = (i: number) => ({
             class="group relative flex-1"
           >
             <div
-              class="glass relative flex h-full flex-col gap-4 rounded-2xl p-6 transition-colors duration-300 hover:border-azure/25"
+              class="panel glow-blue glow-blue-sm relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-colors duration-300 hover:border-azure/25"
             >
               <span class="absolute right-5 top-5 font-display text-sm italic text-bone-dim/50">
                 0{{ i + 1 }}

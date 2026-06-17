@@ -49,11 +49,14 @@
 
   body {
     margin: 0;
-    background-color: var(--color-ink-950);
     color: var(--color-bone);
     font-family: var(--font-sans);
     font-weight: 400;
     overflow-x: hidden;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(46, 107, 255, 0.18), transparent 24%),
+      linear-gradient(180deg, #0d0e11 0%, #12141a 42%, #0d0f12 100%);
   }
 
   ::selection {
@@ -107,6 +110,49 @@
     border: 1px solid rgba(236, 234, 225, 0.08);
   }
 
+  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.) */
+  .panel {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+      rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Blue radial glow in the top-right corner — matches .feature-card::after */
+  .glow-blue {
+    position: relative;
+    overflow: hidden;
+  }
+  .glow-blue::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -60px;
+    top: -60px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(46, 107, 255, 0.16), transparent 68%);
+    pointer-events: none;
+  }
+
+  /* Smaller glow for compact cards */
+  .glow-blue-sm::after {
+    width: 130px;
+    height: 130px;
+    right: -40px;
+    top: -40px;
+  }
+
   .eyebrow {
     font-size: 0.72rem;
     letter-spacing: 0.22em;
@@ -116,6 +162,14 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Text color overrides */
+  .text-bone {
+    color: #ffffff;
+  }
+  .text-bone-dim {
+    color: #eceae1;
   }
 
   /* Reduced-motion shimmer guard handled per-component */

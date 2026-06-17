@@ -34,8 +34,8 @@ const drift = (dur: number, dist = 12) =>
         class="h-full w-full"
       >
         <img
-          :src="`${baseUrl}hero-placeholder.svg`"
-          alt="知序 FabricMind 秀场与面料主视觉占位图"
+          :src="`${baseUrl}hero-visual.png`"
+          alt="知序 FabricMind 数据智能主视觉"
           class="h-full w-full object-cover"
         />
       </Motion>

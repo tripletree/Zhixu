@@ -142,7 +142,7 @@ const drift = (dur: number, dist = 12) =>
               href="#framework"
               class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-bone/35 hover:bg-bone/[0.04]"
             >
-              了解���品
+              了解产品
             </a>
           </div>
         </Motion>

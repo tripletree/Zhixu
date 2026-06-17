@@ -27,7 +27,7 @@ const drift = (dur: number, dist = 12) =>
   <section
     id="top"
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
-    style="background-color: #091C38;"
+    style="background: linear-gradient(to right, #111C2E 0%, #0C1E36 35%, #091C38 60%);"
   >
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">

@@ -54,20 +54,6 @@ const drift = (dur: number, dist = 12) =>
       />
     </div>
 
-    <!-- Layer 5: Subtle bezier data-flow lines extending from the visual toward the copy -->
-    <svg
-      class="pointer-events-none absolute inset-0 h-full w-full"
-      preserveAspectRatio="none"
-      viewBox="0 0 1440 900"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path d="M1440 250 C 1080 300, 760 360, 420 520 S -40 760, -160 820" stroke="#9ec7ff" stroke-width="1" opacity="0.06" />
-      <path d="M1440 420 C 1120 440, 820 470, 520 600 S 60 800, -120 860" stroke="#7fb2ff" stroke-width="1" opacity="0.05" />
-      <path d="M1440 600 C 1140 600, 860 620, 560 700 S 120 840, -100 900" stroke="#c9ad7c" stroke-width="1" opacity="0.04" />
-      <path d="M1440 140 C 1160 220, 900 300, 620 420 S 140 620, -80 700" stroke="#9ec7ff" stroke-width="1" opacity="0.04" />
-    </svg>
-
     <!-- Layer 4: Technical grid + noise overlays -->
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-60" />
     <div class="pointer-events-none absolute inset-0 bg-noise opacity-[0.05]" />
@@ -157,7 +143,7 @@ const drift = (dur: number, dist = 12) =>
               href="#framework"
               class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-bone/35 hover:bg-bone/[0.04]"
             >
-              了解产品
+              了解���品
             </a>
           </div>
         </Motion>

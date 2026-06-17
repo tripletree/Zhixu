@@ -101,7 +101,7 @@ const drift = (dur: number, dist = 12) =>
 
     <!-- Restrained, high-contrast copy column -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
-      <div class="w-full max-w-xl lg:w-1/3 lg:max-w-none">
+      <div class="glass w-full max-w-xl rounded-3xl p-8 lg:w-[42%] lg:max-w-none lg:p-10">
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />

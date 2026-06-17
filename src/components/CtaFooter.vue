@@ -25,7 +25,7 @@ const { open: openContact } = useContactDialog()
       </Reveal>
       <Reveal :y="24" :delay="0.08">
         <h2 class="ml-[31px] mr-[49px] mt-6 max-w-3xl text-balance text-4xl font-bold leading-[1.18] tracking-tight text-bone sm:text-5xl">
-          与知序一起，让每一次决策更有据可循
+          与知序一起，让每一次决策<br />更有据可循
         </h2>
       </Reveal>
       <Reveal :y="24" :delay="0.16">

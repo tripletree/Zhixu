@@ -24,7 +24,11 @@ const drift = (dur: number, dist = 12) =>
 </script>
 
 <template>
-  <section id="top" class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden">
+  <section
+    id="top"
+    class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
+    style="background-color: #070D19;"
+  >
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">
       <Motion
@@ -34,23 +38,24 @@ const drift = (dur: number, dist = 12) =>
         class="h-full w-full"
       >
         <img
-          :src="`${baseUrl}hero-placeholder.svg`"
-          alt="知序 FabricMind 秀场与面料主视觉占位图"
-          class="h-full w-full object-cover"
+          :src="`${baseUrl}hero-visual.png`"
+          alt="知序 FabricMind 数据智能主视觉"
+          class="h-full w-full object-cover object-right"
         />
       </Motion>
-      <!-- Fade the image into the dark on its left edge -->
-      <div class="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/55 to-transparent lg:via-ink-950/20" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
+      <!-- Fade the image into the shared solid navy field on its left edge -->
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(to right, #070D19 0%, #070D19 12%, rgba(7, 13, 25, 0.7) 32%, rgba(7, 13, 25, 0.3) 55%, transparent 78%);"
+      />
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(to top, #070D19 0%, transparent 50%, rgba(7, 13, 25, 0.3) 100%);"
+      />
     </div>
 
-    <!-- Technical overlays -->
-    <div class="pointer-events-none absolute inset-0 bg-grid opacity-60" />
+    <!-- Layer 4: Noise overlay -->
     <div class="pointer-events-none absolute inset-0 bg-noise opacity-[0.05]" />
-    <div
-      class="pointer-events-none absolute -right-40 top-1/4 size-[44rem] rounded-full opacity-50 blur-3xl"
-      style="background: radial-gradient(circle, rgba(87, 184, 212, 0.16), transparent 65%)"
-    />
 
     <!-- Floating data annotations over the visual -->
     <div class="pointer-events-none absolute inset-0 hidden lg:block">
@@ -96,7 +101,7 @@ const drift = (dur: number, dist = 12) =>
 
     <!-- Restrained, high-contrast copy column -->
     <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
-      <div class="w-full max-w-xl lg:w-1/3 lg:max-w-none">
+      <div class="w-full max-w-xl lg:w-[42%] lg:max-w-none">
         <Motion v-bind="rise(0.1)">
           <div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-bone/10 bg-bone/[0.03] px-3.5 py-1.5">
             <Sparkles class="size-3.5 text-champagne" />

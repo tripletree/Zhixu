@@ -43,7 +43,7 @@ import { Sparkles } from 'lucide-vue-next'
       <!-- generated top -->
       <path d="M45 46 C 52 41, 68 41, 75 46 L 80 96 L 40 96 Z" fill="url(#topGrad)" />
       <!-- generated bottom -->
-      <path d="M41 100 L 79 100 L 73 178 L 66 178 L 60 120 L 54 178 L 47 178 Z" fill="#57b8d4" fill-opacity="0.28" stroke="#57b8d4" stroke-opacity="0.4" stroke-width="0.8" />
+      <path d="M41 100 L 79 100 L 73 178 L 66 178 L 60 120 L 54 178 L 47 178 Z" class="fill-azure stroke-azure" fill-opacity="0.28" stroke-opacity="0.4" stroke-width="0.8" />
     </svg>
 
     <!-- generate button -->

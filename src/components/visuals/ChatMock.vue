@@ -30,7 +30,7 @@ const bars = [38, 52, 44, 66, 58, 78, 70]
                 width="12"
                 :height="(b / 100) * 40"
                 rx="2"
-                fill="#57b8d4"
+                class="fill-azure"
                 :fill-opacity="0.35 + (b / 100) * 0.5"
               />
             </g>

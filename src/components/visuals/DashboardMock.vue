@@ -26,12 +26,12 @@ const radarGrid = [1, 0.66, 0.33].map((ring) =>
   radarValues.map((_, i) => radarPoint(i, ring)).join(' '),
 )
 
-// 趋势热度走势（4 条去饱和曲线）
+// 趋势热度走势（4 条去饱和曲线）— stroke via token classes so they follow the theme
 const trendLines = [
-  { color: '#57b8d4', d: 'M4 78 C 40 70, 70 52, 110 48 C 150 44, 190 30, 236 18' },
-  { color: '#c9ad7c', d: 'M4 84 C 50 80, 80 70, 120 66 C 160 62, 200 56, 236 44' },
-  { color: '#8b8f99', d: 'M4 70 C 40 72, 80 66, 120 70 C 160 74, 200 60, 236 58' },
-  { color: '#9a4250', d: 'M4 90 C 50 88, 90 86, 130 80 C 170 74, 205 78, 236 70' },
+  { cls: 'stroke-azure', d: 'M4 78 C 40 70, 70 52, 110 48 C 150 44, 190 30, 236 18' },
+  { cls: 'stroke-champagne', d: 'M4 84 C 50 80, 80 70, 120 66 C 160 62, 200 56, 236 44' },
+  { cls: 'stroke-mist', d: 'M4 70 C 40 72, 80 66, 120 70 C 160 74, 200 60, 236 58' },
+  { cls: 'stroke-rouge', d: 'M4 90 C 50 88, 90 86, 130 80 C 170 74, 205 78, 236 70' },
 ]
 
 // 「品类机会分布」气泡散点
@@ -68,13 +68,13 @@ const bubbles = [
           <span class="text-[10px] tracking-wide text-mist">2023 Q1 → 2025 Q1</span>
         </div>
         <svg viewBox="0 0 240 100" class="h-20 w-full" preserveAspectRatio="none">
-          <line v-for="y in [22, 48, 74]" :key="y" x1="0" :y1="y" x2="240" :y2="y" stroke="#8b8f99" stroke-opacity="0.1" />
+          <line v-for="y in [22, 48, 74]" :key="y" x1="0" :y1="y" x2="240" :y2="y" class="stroke-mist" stroke-opacity="0.1" />
           <path
             v-for="(l, i) in trendLines"
             :key="i"
             :d="l.d"
             fill="none"
-            :stroke="l.color"
+            :class="l.cls"
             stroke-width="1.6"
             stroke-linecap="round"
             :opacity="i === 0 ? 0.95 : 0.6"
@@ -96,17 +96,17 @@ const bubbles = [
               :key="i"
               :points="g"
               fill="none"
-              stroke="#8b8f99"
+              class="stroke-mist"
               stroke-opacity="0.16"
             />
-            <polygon :points="radarPolygon" fill="#57b8d4" fill-opacity="0.18" stroke="#57b8d4" stroke-width="1.4" />
+            <polygon :points="radarPolygon" class="fill-azure stroke-azure" fill-opacity="0.18" stroke-width="1.4" />
             <circle
               v-for="(v, i) in radarValues"
               :key="i"
               :cx="radarPoint(i, v).split(',')[0]"
               :cy="radarPoint(i, v).split(',')[1]"
               r="1.6"
-              fill="#6fd0ec"
+              class="fill-azure-bright"
             />
           </svg>
         </div>
@@ -121,17 +121,16 @@ const bubbles = [
           <span class="eyebrow text-[10px] text-bone-dim">品类机会分布</span>
         </div>
         <svg viewBox="0 0 100 90" class="h-20 w-full">
-          <line x1="8" y1="82" x2="98" y2="82" stroke="#8b8f99" stroke-opacity="0.18" />
-          <line x1="8" y1="6" x2="8" y2="82" stroke="#8b8f99" stroke-opacity="0.18" />
+          <line x1="8" y1="82" x2="98" y2="82" class="stroke-mist" stroke-opacity="0.18" />
+          <line x1="8" y1="6" x2="8" y2="82" class="stroke-mist" stroke-opacity="0.18" />
           <circle
             v-for="(b, i) in bubbles"
             :key="i"
             :cx="b.x"
             :cy="b.y"
             :r="b.r"
-            :fill="b.hot ? '#57b8d4' : '#c8c7c0'"
+            :class="b.hot ? 'fill-azure stroke-azure' : 'fill-bone-soft stroke-mist'"
             :fill-opacity="b.hot ? 0.32 : 0.14"
-            :stroke="b.hot ? '#57b8d4' : '#8b8f99'"
             stroke-opacity="0.5"
           />
         </svg>

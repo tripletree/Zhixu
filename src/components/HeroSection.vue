@@ -27,7 +27,7 @@ const drift = (dur: number, dist = 12) =>
   <section
     id="top"
     class="relative flex h-screen min-h-[680px] w-full items-center overflow-hidden"
-    style="background-color: #070D19;"
+    style="background-color: rgb(var(--hero-base))"
   >
     <!-- Immersive placeholder image, anchored right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-[58%]">
@@ -46,11 +46,11 @@ const drift = (dur: number, dist = 12) =>
       <!-- Fade the image into the shared solid navy field on its left edge -->
       <div
         class="absolute inset-0"
-        style="background: linear-gradient(to right, #070D19 0%, #070D19 12%, rgba(7, 13, 25, 0.7) 32%, rgba(7, 13, 25, 0.3) 55%, transparent 78%);"
+        style="background: linear-gradient(to right, rgb(var(--hero-base)) 0%, rgb(var(--hero-base)) 12%, rgb(var(--hero-base) / 0.7) 32%, rgb(var(--hero-base) / 0.3) 55%, transparent 78%)"
       />
       <div
         class="absolute inset-0"
-        style="background: linear-gradient(to top, #070D19 0%, transparent 50%, rgba(7, 13, 25, 0.3) 100%);"
+        style="background: linear-gradient(to top, rgb(var(--hero-base)) 0%, transparent 50%, rgb(var(--hero-base) / 0.3) 100%)"
       />
     </div>
 
@@ -132,7 +132,7 @@ const drift = (dur: number, dist = 12) =>
           <div class="mt-10 flex flex-wrap items-center gap-4">
             <button
               type="button"
-              class="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-[14px] font-medium tracking-wide text-ink-950 transition-all hover:bg-white hover:shadow-[0_0_36px_-8px_rgba(236,234,225,0.4)]"
+              class="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-[14px] font-medium tracking-wide text-ink-950 transition-all hover:bg-(--cta-hover) hover:shadow-[0_0_36px_-8px_var(--cta-glow)]"
               @click="openContact"
             >
               预约演示

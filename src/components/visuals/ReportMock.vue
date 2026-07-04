@@ -42,9 +42,9 @@ const slides = [
           <div class="h-1.5 w-10 rounded bg-azure/60" />
           <svg viewBox="0 0 120 60" class="mt-2 h-12 w-full">
             <g v-for="(h, n) in [18, 26, 22, 34, 30]" :key="n">
-              <rect :x="n * 22 + 4" :y="52 - h" width="9" :height="h" rx="1.5" fill="#c8c7c0" fill-opacity="0.16" />
+              <rect :x="n * 22 + 4" :y="52 - h" width="9" :height="h" rx="1.5" class="fill-bone-soft" fill-opacity="0.16" />
             </g>
-            <polyline points="8,30 30,22 52,26 74,12 96,16 113,6" fill="none" stroke="#57b8d4" stroke-width="1.6" />
+            <polyline points="8,30 30,22 52,26 74,12 96,16 113,6" fill="none" class="stroke-azure" stroke-width="1.6" />
           </svg>
         </template>
         <!-- material board -->

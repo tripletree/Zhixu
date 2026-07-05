@@ -60,7 +60,8 @@ const onKeydown = (e: KeyboardEvent) => {
         </p>
 
         <div class="mt-6 flex justify-center">
-          <div class="rounded-xl bg-bone p-3">
+          <!-- Stays white in both themes so the QR code keeps scan contrast -->
+          <div class="rounded-xl bg-white p-3">
             <img
               :src="`${baseUrl}wechat-qr.png`"
               alt="知序 FabricMind 微信二维码"

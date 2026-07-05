@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* `light:` utility variant, active when the light theme class is on <html> */
+@custom-variant light (&:where(html.light, html.light *));
+
 /* ------------------------------------------------------------------ */
 /*  知序 FabricMind — Design tokens                                    */
 /*  高级时尚 (Fashion) + 智能科技 (Intelligence)                        */
@@ -40,11 +43,57 @@
   --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ------------------------------------------------------------------ */
+/*  Light theme — toggled via `light` class on <html>                  */
+/*  Semantic tokens invert: ink-* become light surfaces, bone becomes  */
+/*  dark text, so token-based utilities flip automatically.            */
+/* ------------------------------------------------------------------ */
+html.light {
+  /* Base 01 · ink → white / neutral light surfaces */
+  --color-ink-950: #ffffff;
+  --color-ink-900: #f7f7f8;
+  --color-ink-850: #f0f0f2;
+  --color-ink-800: #e8e9ec;
+  --color-ink-750: #dfe1e5;
+  --color-ink-700: #d2d5da;
+
+  /* Base 02 · bone → dark ink text */
+  --color-bone: #14171c;
+  --color-bone-soft: #3c424d;
+  --color-bone-dim: #5d6470;
+
+  /* Base 03 · mist stays neutral, slightly darkened for contrast */
+  --color-mist: #6f7480;
+  --color-mist-dark: #a3a9b4;
+
+  /* Accent 01 · azure deepened so it reads on white */
+  --color-azure: #2c7e98;
+  --color-azure-bright: #2795b5;
+  --color-azure-deep: #57b8d4;
+
+  /* Accent 02 · champagne darkened toward bronze */
+  --color-champagne: #a5854e;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  :root {
+    /* Solid navy field shared by the hero + framework blend (r g b) */
+    --hero-base: 7 13 25;
+    /* Primary CTA pill: hover surface + glow */
+    --cta-hover: #ffffff;
+    --cta-glow: rgba(236, 234, 225, 0.4);
+  }
+
+  html.light {
+    --hero-base: 255 255 255;
+    --cta-hover: #272d38;
+    --cta-glow: rgba(20, 23, 28, 0.3);
   }
 
   body {
@@ -57,6 +106,10 @@
     background:
       radial-gradient(circle at 80% 20%, rgba(46, 107, 255, 0.18), transparent 24%),
       linear-gradient(180deg, #0d0e11 0%, #12141a 42%, #0d0f12 100%);
+  }
+
+  html.light body {
+    background: #ffffff;
   }
 
   ::selection {
@@ -76,6 +129,19 @@
     border-radius: 999px;
     border: 3px solid var(--color-ink-950);
   }
+
+  /* Cross-fade colors while the theme toggles (class added by useTheme) */
+  html.theme-anim,
+  html.theme-anim *,
+  html.theme-anim *::before,
+  html.theme-anim *::after {
+    transition:
+      background-color 0.4s var(--ease-calm),
+      background 0.4s var(--ease-calm),
+      color 0.4s var(--ease-calm),
+      border-color 0.4s var(--ease-calm),
+      box-shadow 0.4s var(--ease-calm) !important;
+  }
 }
 
 @layer utilities {
@@ -94,6 +160,18 @@
     background-size: 28px 28px;
   }
 
+  html.light .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(60, 66, 77, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.06) 1px, transparent 1px);
+  }
+
+  html.light .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(60, 66, 77, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.05) 1px, transparent 1px);
+  }
+
   /* Low-contrast film grain / noise */
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
@@ -110,22 +188,34 @@
     border: 1px solid rgba(236, 234, 225, 0.08);
   }
 
-  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.) */
+  /* Light theme: pale frosted glass — heavy blur, hairline edge, diffuse
+     shadow (matches the ChatGPT.com dropdown look) */
+  html.light .glass {
+    background: rgba(246, 246, 247, 0.72);
+    backdrop-filter: blur(28px) saturate(1.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 24px 60px -24px rgba(0, 0, 0, 0.16),
+      0 4px 14px -8px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.)
+     The diagonal sheen lives in the background stack (not an overlay pseudo-element)
+     so text always paints crisply on top. */
   .panel {
     position: relative;
     background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
       rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
-  .panel::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
-    pointer-events: none;
-    z-index: 0;
+  /* Light theme: near-white cards with a hairline border and diffuse shadow */
+  html.light .panel {
+    background: linear-gradient(180deg, #ffffff, #fbfbfc);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.16);
   }
 
   /* Blue radial glow in the top-right corner — matches .feature-card::after */
@@ -141,8 +231,12 @@
     right: -60px;
     top: -60px;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(46, 107, 255, 0.16), transparent 68%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.16), transparent 68%);
     pointer-events: none;
+  }
+
+  html.light .glow-blue::after {
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 68%);
   }
 
   /* Smaller glow for compact cards */
@@ -170,6 +264,12 @@
   }
   .text-bone-dim {
     color: #eceae1;
+  }
+  html.light .text-bone {
+    color: #14171c;
+  }
+  html.light .text-bone-dim {
+    color: #454b56;
   }
 
   /* Reduced-motion shimmer guard handled per-component */

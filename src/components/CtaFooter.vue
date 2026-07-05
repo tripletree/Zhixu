@@ -37,7 +37,7 @@ const { open: openContact } = useContactDialog()
         <div class="mt-10 flex justify-center">
           <button
             type="button"
-            class="group inline-flex items-center gap-2.5 rounded-full bg-bone px-8 py-4 text-[15px] font-medium tracking-wide text-ink-950 transition-all hover:bg-white hover:shadow-[0_0_44px_-8px_rgba(236,234,225,0.45)]"
+            class="group inline-flex items-center gap-2.5 rounded-full bg-bone px-8 py-4 text-[15px] font-medium tracking-wide text-ink-950 transition-all hover:bg-(--cta-hover) hover:shadow-[0_0_44px_-8px_var(--cta-glow)]"
             @click="openContact"
           >
             预约产品演示

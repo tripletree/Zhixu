@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { ArrowUpRight } from 'lucide-vue-next'
+import { ArrowUpRight, Moon, Sun } from 'lucide-vue-next'
 import BrandMark from './ui/BrandMark.vue'
 import { useContactDialog } from '../composables/useContactDialog'
+import { useTheme } from '../composables/useTheme'
 
 const { open: openContact } = useContactDialog()
+const { theme, toggle: toggleTheme } = useTheme()
 
 const scrolled = ref(false)
 const onScroll = () => {
@@ -48,14 +50,26 @@ const links = [
         </a>
       </div>
 
-      <button
-        type="button"
-        class="group inline-flex items-center gap-1.5 rounded-full border border-bone/15 bg-bone/[0.03] px-4 py-2 text-[13px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10"
-        @click="openContact"
-      >
-        预约演示
-        <ArrowUpRight class="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </button>
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          class="inline-flex size-9 items-center justify-center rounded-full border border-bone/15 bg-bone/[0.03] text-bone-soft transition-all hover:border-azure/40 hover:bg-azure/10 hover:text-bone"
+          :aria-label="theme === 'dark' ? '切换到浅色主题' : '切换到深色主题'"
+          @click="toggleTheme"
+        >
+          <Sun v-if="theme === 'dark'" class="size-4" :stroke-width="1.75" />
+          <Moon v-else class="size-4" :stroke-width="1.75" />
+        </button>
+
+        <button
+          type="button"
+          class="group inline-flex items-center gap-1.5 rounded-full border border-bone/15 bg-bone/[0.03] px-4 py-2 text-[13px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10"
+          @click="openContact"
+        >
+          预约演示
+          <ArrowUpRight class="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </button>
+      </div>
     </nav>
   </header>
 </template>

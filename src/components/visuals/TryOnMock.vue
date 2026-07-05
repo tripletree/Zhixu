@@ -28,12 +28,12 @@ import { Sparkles } from 'lucide-vue-next'
     <svg viewBox="0 0 120 200" class="relative h-44 w-auto">
       <defs>
         <linearGradient id="figGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#2c313b" />
-          <stop offset="1" stop-color="#0e1117" />
+          <stop class="tryon-fig-0" offset="0" />
+          <stop class="tryon-fig-1" offset="1" />
         </linearGradient>
         <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#eceae1" stop-opacity="0.85" />
-          <stop offset="1" stop-color="#c8c7c0" stop-opacity="0.5" />
+          <stop class="tryon-top-0" offset="0" />
+          <stop class="tryon-top-1" offset="1" />
         </linearGradient>
       </defs>
       <!-- head -->
@@ -43,7 +43,7 @@ import { Sparkles } from 'lucide-vue-next'
       <!-- generated top -->
       <path d="M45 46 C 52 41, 68 41, 75 46 L 80 96 L 40 96 Z" fill="url(#topGrad)" />
       <!-- generated bottom -->
-      <path d="M41 100 L 79 100 L 73 178 L 66 178 L 60 120 L 54 178 L 47 178 Z" fill="#57b8d4" fill-opacity="0.28" stroke="#57b8d4" stroke-opacity="0.4" stroke-width="0.8" />
+      <path d="M41 100 L 79 100 L 73 178 L 66 178 L 60 120 L 54 178 L 47 178 Z" class="fill-azure stroke-azure" fill-opacity="0.28" stroke-opacity="0.4" stroke-width="0.8" />
     </svg>
 
     <!-- generate button -->
@@ -56,3 +56,36 @@ import { Sparkles } from 'lucide-vue-next'
     </button>
   </div>
 </template>
+
+<style>
+/* Model silhouette + generated-top gradients, themed via stop-color */
+.tryon-fig-0 {
+  stop-color: #2c313b;
+}
+.tryon-fig-1 {
+  stop-color: #0e1117;
+}
+.tryon-top-0 {
+  stop-color: #eceae1;
+  stop-opacity: 0.85;
+}
+.tryon-top-1 {
+  stop-color: #c8c7c0;
+  stop-opacity: 0.5;
+}
+
+html.light .tryon-fig-0 {
+  stop-color: #a2aab6;
+}
+html.light .tryon-fig-1 {
+  stop-color: #6d7684;
+}
+html.light .tryon-top-0 {
+  stop-color: #ffffff;
+  stop-opacity: 0.95;
+}
+html.light .tryon-top-1 {
+  stop-color: #e2ded2;
+  stop-opacity: 0.85;
+}
+</style>

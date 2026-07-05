@@ -46,13 +46,13 @@
 /*  dark text, so token-based utilities flip automatically.            */
 /* ------------------------------------------------------------------ */
 html.light {
-  /* Base 01 · ink → light cool surfaces */
-  --color-ink-950: #f6f7fa;
-  --color-ink-900: #eff1f5;
-  --color-ink-850: #e8ebf1;
-  --color-ink-800: #e0e4eb;
-  --color-ink-750: #d7dce4;
-  --color-ink-700: #cbd1db;
+  /* Base 01 · ink → white / neutral light surfaces */
+  --color-ink-950: #ffffff;
+  --color-ink-900: #f7f7f8;
+  --color-ink-850: #f0f0f2;
+  --color-ink-800: #e8e9ec;
+  --color-ink-750: #dfe1e5;
+  --color-ink-700: #d2d5da;
 
   /* Base 02 · bone → dark ink text */
   --color-bone: #14171c;
@@ -88,7 +88,7 @@ html.light {
   }
 
   html.light {
-    --hero-base: 236 240 246;
+    --hero-base: 255 255 255;
     --cta-hover: #272d38;
     --cta-glow: rgba(20, 23, 28, 0.3);
   }
@@ -106,9 +106,7 @@ html.light {
   }
 
   html.light body {
-    background:
-      radial-gradient(circle at 80% 20%, rgba(46, 107, 255, 0.07), transparent 26%),
-      linear-gradient(180deg, #fdfdfe 0%, #f5f7fa 42%, #f9fafc 100%);
+    background: #ffffff;
   }
 
   ::selection {
@@ -187,16 +185,15 @@ html.light {
     border: 1px solid rgba(236, 234, 225, 0.08);
   }
 
-  /* Light theme: bright frosted white glass (ChatGPT-style dropdown look) */
+  /* Light theme: pale frosted glass — heavy blur, hairline edge, diffuse
+     shadow (matches the ChatGPT.com dropdown look) */
   html.light .glass {
-    background: linear-gradient(
-      160deg,
-      rgba(255, 255, 255, 0.78),
-      rgba(255, 255, 255, 0.55)
-    );
-    backdrop-filter: blur(20px) saturate(1.5);
-    border: 1px solid rgba(20, 23, 28, 0.08);
-    box-shadow: 0 16px 40px -18px rgba(15, 23, 42, 0.18);
+    background: rgba(246, 246, 247, 0.72);
+    backdrop-filter: blur(28px) saturate(1.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 24px 60px -24px rgba(0, 0, 0, 0.16),
+      0 4px 14px -8px rgba(0, 0, 0, 0.06);
   }
 
   /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.) */
@@ -217,17 +214,15 @@ html.light {
     z-index: 0;
   }
 
-  /* Light theme: soft white cards with a hairline border and gentle drop shadow */
+  /* Light theme: near-white cards with a hairline border and diffuse shadow */
   html.light .panel {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72)),
-      rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(20, 23, 28, 0.08);
-    box-shadow: 0 14px 36px -22px rgba(15, 23, 42, 0.18);
+    background: linear-gradient(180deg, #ffffff, #fbfbfc);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.16);
   }
 
   html.light .panel::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), transparent 45%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), transparent 45%);
   }
 
   /* Blue radial glow in the top-right corner — matches .feature-card::after */

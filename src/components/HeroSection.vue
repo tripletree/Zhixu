@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useReducedMotion } from 'motion-v'
 import { Motion } from '../lib/motion'
 import { ArrowRight, Sparkles, TrendingUp, Activity } from 'lucide-vue-next'
 import { useContactDialog } from '../composables/useContactDialog'
+import { useTheme } from '../composables/useTheme'
 
 const { open: openContact } = useContactDialog()
 const reduced = useReducedMotion()
 const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
+
+const { theme } = useTheme()
+const heroSrc = computed(
+  () => `${baseUrl}${theme.value === 'light' ? 'hero-light.png' : 'hero-visual.png'}`,
+)
 
 // Layered entrance: each element floats up with an increasing delay.
 const rise = (delay: number) => ({
@@ -38,7 +45,7 @@ const drift = (dur: number, dist = 12) =>
         class="h-full w-full"
       >
         <img
-          :src="`${baseUrl}hero-visual.png`"
+          :src="heroSrc"
           alt="知序 FabricMind 数据智能主视觉"
           class="h-full w-full object-cover object-right"
         />

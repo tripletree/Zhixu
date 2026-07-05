@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* `light:` utility variant, active when the light theme class is on <html> */
+@custom-variant light (&:where(html.light, html.light *));
+
 /* ------------------------------------------------------------------ */
 /*  知序 FabricMind — Design tokens                                    */
 /*  高级时尚 (Fashion) + 智能科技 (Intelligence)                        */

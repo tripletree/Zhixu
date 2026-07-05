@@ -23,7 +23,7 @@ const slides = [
       <div
         v-for="(s, i) in slides"
         :key="i"
-        class="absolute left-1/2 top-1/2 h-32 w-40 rounded-lg border border-bone/10 bg-ink-800/90 p-3 shadow-xl backdrop-blur"
+        class="absolute left-1/2 top-1/2 h-32 w-40 rounded-lg border border-bone/10 bg-ink-800/90 p-3 shadow-xl backdrop-blur light:border-bone/[0.08] light:bg-white light:shadow-[0_14px_30px_-14px_rgba(0,0,0,0.25)]"
         :style="{
           transform: `translate(-50%,-50%) translate(${s.x}px, ${s.y}px) rotate(${s.rotate}deg)`,
           zIndex: s.z,

@@ -196,22 +196,16 @@ html.light {
       0 4px 14px -8px rgba(0, 0, 0, 0.06);
   }
 
-  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.) */
+  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.)
+     The diagonal sheen lives in the background stack (not an overlay pseudo-element)
+     so text always paints crisply on top. */
   .panel {
     position: relative;
     background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
       rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .panel::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
-    pointer-events: none;
-    z-index: 0;
   }
 
   /* Light theme: near-white cards with a hairline border and diffuse shadow */
@@ -219,10 +213,6 @@ html.light {
     background: linear-gradient(180deg, #ffffff, #fbfbfc);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.16);
-  }
-
-  html.light .panel::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), transparent 45%);
   }
 
   /* Blue radial glow in the top-right corner — matches .feature-card::after */

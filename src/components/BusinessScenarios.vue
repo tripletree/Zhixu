@@ -2,10 +2,16 @@
 import { useReducedMotion } from 'motion-v'
 import { Motion } from '../lib/motion'
 import Reveal from './ui/Reveal.vue'
+import { useTheme } from '../composables/useTheme'
 
 const reduced = useReducedMotion()
 const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
+const { theme } = useTheme()
+
+// Each scenario ships a dark and a light placeholder (`*-light.svg`)
+const imgSrc = (img: string) =>
+  baseUrl + (theme.value === 'light' ? img.replace(/\.svg$/, '-light.svg') : img)
 
 const scenarios = [
   {
@@ -78,7 +84,7 @@ const cardMotion = (i: number) => ({
               >
                 <div class="relative z-[1] overflow-hidden rounded-xl border border-bone/[0.07]">
                   <img
-                    :src="baseUrl + s.img"
+                    :src="imgSrc(s.img)"
                     :alt="s.title"
                     class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
                   />

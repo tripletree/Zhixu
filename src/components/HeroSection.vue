@@ -13,7 +13,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 const { theme } = useTheme()
 const heroSrc = computed(
-  () => `${baseUrl}${theme.value === 'light' ? 'hero-light.png' : 'hero-visual.png'}`,
+  () => `${baseUrl}${theme.value === 'light' ? 'hero-light.svg' : 'hero-visual.png'}`,
 )
 
 // Layered entrance: each element floats up with an increasing delay.
